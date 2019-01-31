@@ -15,14 +15,13 @@ public class PreviousTransactions {
 	//This function prints the records in tabular format
 	public void printRecords()
 	{
-		System.out.println("Time\tBuyer\tStock\tSeller\tQnt\tPrice\tTotalMoney");
+		System.out.println("B_Time\tS_time\tBuyer\tSeller\tStock\tQnt\tPrice");
 		for(int i=0 ; i<Records.size();i++)
 		{
 			Trade temp = Records.get(i);
-			System.out.println(temp.time +"\t"+temp.buyer
-					+"\t" + temp.stock + "\t" + temp.seller
-					+"\t" + temp.qnt + "\t" + temp.price
-					+"\t" + temp.qnt*temp.price);
+			System.out.println(temp.b_time +"\t"+ temp.s_time +"\t" +temp.buyer
+					+"\t" + temp.seller + "\t" + temp.stock
+					+"\t" + temp.qnt + "\t" + temp.price);
 		}
 	}
 }

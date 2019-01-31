@@ -63,37 +63,43 @@ public class PendingOrders {
 						IncomingOrder.qnt = IncomingOrder.qnt - pendingOrder.qnt;
 						Trade new_trans = new Trade();
 						new_trans.qnt = pendingOrder.qnt;
-						new_trans.time = IncomingOrder.time;
 						new_trans.stock = IncomingOrder.stock;
 						if(IncomingOrder.type.equals("sell"))
 						{
+							new_trans.s_time = IncomingOrder.time;
+							new_trans.b_time = pendingOrder.time;
 							new_trans.seller=IncomingOrder.from;
 							new_trans.buyer =pendingOrder.from;
 							new_trans.price = IncomingOrder.price;
 						}
 						if(IncomingOrder.type.equals("buy"))
 						{
+							new_trans.b_time = IncomingOrder.time;
+							new_trans.s_time = pendingOrder.time;
 							new_trans.seller=pendingOrder.from;
 							new_trans.buyer =IncomingOrder.from;
 							new_trans.price =pendingOrder.price;
 						}
-						TradesMade.add(new_trans); //Adds into the new transaction lsit
+						TradesMade.add(new_trans); //Adds into the new transaction list which will later be returned
 						Pending.remove(pendingOrder); //Since the quantity of the order will now be 0
 					}
 					else
 					{
 						Trade new_trans = new Trade();
 						new_trans.qnt = IncomingOrder.qnt;
-						new_trans.time = IncomingOrder.time;
 						new_trans.stock = IncomingOrder.stock;
 						if(IncomingOrder.type.equals("sell"))
 						{
+							new_trans.s_time = IncomingOrder.time;
+							new_trans.b_time = pendingOrder.time;
 							new_trans.seller=IncomingOrder.from;
 							new_trans.buyer =pendingOrder.from;
 							new_trans.price = IncomingOrder.price;
 						}
 						if(IncomingOrder.type.equals("buy"))
 						{
+							new_trans.b_time = IncomingOrder.time;
+							new_trans.s_time = pendingOrder.time;
 							new_trans.seller=pendingOrder.from;
 							new_trans.buyer =IncomingOrder.from;
 							new_trans.price =pendingOrder.price;

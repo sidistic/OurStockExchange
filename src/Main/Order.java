@@ -37,7 +37,7 @@ public class Order {
 			}
 			else if(this.type.equals("buy") && incoming.type.equals("sell"))
 			{
-				if(incoming.price < this.price)
+				if(incoming.price <= this.price)
 					return true;
 			}
 		}
