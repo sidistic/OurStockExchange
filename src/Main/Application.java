@@ -11,7 +11,7 @@ public class Application {
 		PreviousTransactions Trans = new PreviousTransactions(); //Object to keep track of trades
 		
 		/* To take input from file*/
-		File file = new File("/home/siddharth/Downloads/input.csv");
+		File file = new File("C:\\Users\\input.csv");
 		BufferedReader br;
 		try
 		{
